@@ -1,40 +1,29 @@
-<html>
-<header>
-<section class='container'>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<title>QA World </title>
-</section>
-</header>
-<body>
-<div class='row'>
-<h1><a href="/">Welcome to QA Application </a></h1>
-</div>
- 
-
-
-<table class="table">
-    <thead>
-      <tr>
-        <th>published date</th>
-        <th>Name</th>
-        <th>text</th>
-      </tr>
-   </thead>
-   {% for pos in post %}
-    <tbody>
-     <tr>
+{%extends 'blog/base.html'%}
+{%block content%}
+<table class='container'>
+<thead>
+  <tr>
+  <th>publish date</th>
+  <th>name</th>
+  <th>text</th>
+  <th>link</th>
+  </tr>
+</thead>
+  {% for pos in post %}
+    
+ <tbody>
+     <tr class="">
         <td>{{pos.published_date}}</td>
         <td>{{pos}}</td>
         <td>{{pos.text}}</td>
+		<td><h3><a href="{% url 'post_detail' pk=pos.pk %}" >click here to see post</a></h3></td>
       </tr>  
-    </tbody>
+   </tbody>
+	
 	{% endfor %}
-  </table>
+</table>
+  {%endblock%}
 		
           
 
 
-<footer>&copy:CAUIMQA</footer>
-</body>
-</html>
