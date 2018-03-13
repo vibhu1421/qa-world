@@ -1,23 +1,40 @@
 <html>
-<head>
-<title>demoapp to learn django</title>
-</head>
+<header>
+<section class='container'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<title>QA World </title>
+</section>
+</header>
 <body>
-<div>
-<h2><a href="/">Demo-app</a></h2>
+<div class='row'>
+<h1><a href="/">Welcome to QA Application </a></h1>
 </div>
+ 
 
 
-<div>
-            <p>published: 12.03.2018, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-</div>
-<div>
-            <p>published: 14.06.2018, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+<table class="table">
+    <thead>
+      <tr>
+        <th>published date</th>
+        <th>Name</th>
+        <th>text</th>
+      </tr>
+   </thead>
+   {% for pos in post %}
+    <tbody>
+     <tr>
+        <td>{{pos.published_date}}</td>
+        <td>{{pos}}</td>
+        <td>{{pos.text}}</td>
+      </tr>  
+    </tbody>
+	{% endfor %}
+  </table>
+		
+          
 
+
+<footer>&copy:CAUIMQA</footer>
 </body>
 </html>
